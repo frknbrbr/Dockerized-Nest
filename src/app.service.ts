@@ -4,7 +4,10 @@ const asyncRedis = require("async-redis");
 @Injectable()
 export class AppService {
   constructor() {
-    this.client = asyncRedis.createClient();
+    this.client = asyncRedis.createClient({
+      host: 'redis-server',
+      port: 6379
+    });
     this.client.set("Request count", 0);
   }
 
