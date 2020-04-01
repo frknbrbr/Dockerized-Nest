@@ -12,11 +12,19 @@ export class AppController {
 
   @Patch('/counter')
   async increaseRedisCount() {
-    return await this.appService.increaseRedisCount();
+    try {
+      return await this.appService.increaseRedisCount();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   @Get('/counter')
   async getRedisCount() {
-    return await this.appService.getRedisCount();
+    try {
+      return await this.appService.getRedisCount();
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
