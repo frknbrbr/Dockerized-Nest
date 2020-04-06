@@ -13,7 +13,7 @@ pipeline {
                 script {
                     //def customImage = docker.build("dockerized-nest")
                     //customImage.push()
-                    sh 'docker build -t dockerized-nest .'
+                    sh 'docker build -t dockerizedd nest .'
                 }
             }
         }
