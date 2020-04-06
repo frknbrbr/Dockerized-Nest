@@ -9,13 +9,9 @@ pipeline {
 
                 //poll scm
                 
-                //sha
-                script {
-                    //def customImage = docker.build("dockerized-nest")
-                    //customImage.push()
-                    //sh 'SHA=$(git rev-parse HEAD)'
-                    sh 'SHA=$(git rev-parse HEAD) && docker build -t frknbrbr/dockerized-nest:$SHA .'
-                }
+                sh 'SHA=$(git rev-parse HEAD)'
+                sh 'docker build -t frknbrbr/dockerized-nest:$SHA .'
+              
             }
         }
     }
