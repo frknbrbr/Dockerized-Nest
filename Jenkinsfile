@@ -13,8 +13,8 @@ pipeline {
                 script {
                     //def customImage = docker.build("dockerized-nest")
                     //customImage.push()
-                    sh 'tag=$(git log -1 --pretty=%h)'
-                    sh 'docker build -t frknbrbr/dockerized-nest:${tag} .'
+                    sh 'SHA=$(git rev-parse HEAD)'
+                    sh 'docker build -t frknbrbr/dockerized-nest:$SHA .'
                 }
             }
         }
