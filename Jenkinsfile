@@ -9,8 +9,7 @@ pipeline {
 
                 //poll scm
                 //sh 'SHA=$(git rev-parse HEAD) && docker build -t frknbrbr/dockerized-nest:$SHA .'
-                sh 'docker build -t frknbrbr/dockerizedd-nest:$(git rev-parse HEAD) .'
-              
+                sh 'docker build -t frknbrbr/dockerizedd-nest:$(git rev-parse origin/master) .' 
             }
         }
     }
