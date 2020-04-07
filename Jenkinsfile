@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     environment {
-    registry = "frknbrbr/dockerized-nest"
-    registryCredential = "dockerhub"
+      registry = "frknbrbr/dockerized-nest"
+      //registryCredential = "dockerhub"
+      DOCKERHUB_CREDS = credentials('dockerhub')
     }
 
     stages {
@@ -22,7 +23,7 @@ pipeline {
         stage('Deliver image') {
             steps {
                 echo 'Starting to push image to the dockerhub'
-
+                sh "docker login -u=${env.DOCKERHUB_CREDS_USR} -p=${env.DOCKERHUB_CREDS_PSW}"
                 sh "docker push ${env.registry}:${env.GIT_COMMIT}"
             }
         }        
