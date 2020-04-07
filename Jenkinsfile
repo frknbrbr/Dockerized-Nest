@@ -8,6 +8,15 @@ pipeline {
     }
 
     stages {
+        stage('Docker Login') {
+            steps {
+              echo 'Login to docker'
+
+              sh "docker login -u=${env.DOCKERHUB_CREDS_USR} -p=${env.DOCKERHUB_CREDS_PSW}"
+
+            }
+        }
+
         stage('Build image') {
             steps {
                 echo 'Starting to build docker image'
@@ -23,7 +32,6 @@ pipeline {
         stage('Deliver image') {
             steps {
                 echo 'Starting to push image to the dockerhub'
-                sh "docker login -u=${env.DOCKERHUB_CREDS_USR} -p=${env.DOCKERHUB_CREDS_PSW}"
                 sh "docker push ${env.registry}:${env.GIT_COMMIT}"
             }
         }        
