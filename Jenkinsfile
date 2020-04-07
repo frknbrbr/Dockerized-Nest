@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build image') {
             steps {
-                echo 'Starting to build docker image s'
+                echo 'Starting to build docker image'
 
                 //sh
                 //poll scm
