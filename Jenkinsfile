@@ -16,7 +16,7 @@ pipeline {
 
             }
         }
-/*
+
         stage('Build image') {
             steps {
                 echo 'Starting to build docker image'
@@ -34,6 +34,6 @@ pipeline {
                 echo 'Starting to push image to the dockerhub'
                 sh "docker push ${env.registry}:${env.GIT_COMMIT}"
             }
-        }        */
+        }  
     }
 }
