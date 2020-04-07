@@ -3,7 +3,7 @@ pipeline {
 
     environment {
     registry = "frknbrbr/dockerized-nest"
-    registryCredential = 'dockerhub'
+    registryCredential = ’dockerhub’
     }
 
     stages {
