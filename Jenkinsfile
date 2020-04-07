@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-      GIT_HASH = GIT_COMMIT.take(7)
-    }
     stages {
         stage('Build image') {
             steps {
@@ -13,7 +10,7 @@ pipeline {
                 //poll scm
                 //sh 'SHA=$(git rev-parse HEAD) && docker build -t frknbrbr/dockerized-nest:$SHA .'
                 //sh 'docker build -t frknbrbr/dockerizedd-nest:$(git rev-parse origin/master) .'
-                sh "docker build -t frknbrbr/dockerized-nest:${env.GIT_HASH} ."
+                sh "docker build -t frknbrbr/dockerized-nest:${env.GIT_COMMIT} ."
             }
         }
     }
