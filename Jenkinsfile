@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+    registry = "frknbrbr/dockerized-nest"
+    registryCredential = 'dockerhub'
+    }
+
     stages {
         stage('Build image') {
             steps {
@@ -10,7 +15,7 @@ pipeline {
                 //poll scm
                 //sh 'SHA=$(git rev-parse HEAD) && docker build -t frknbrbr/dockerized-nest:$SHA .'
                 //sh 'docker build -t frknbrbr/dockerizedd-nest:$(git rev-parse origin/master) .'
-                sh "docker build -t frknbrbr/dockerized-nest:${env.GIT_COMMIT} ."
+                sh "docker build -t ${env.registry}:${env.GIT_COMMIT} . && docker push ${env.registry}:${env.GIT_COMMIT}"
             }
         }
     }
