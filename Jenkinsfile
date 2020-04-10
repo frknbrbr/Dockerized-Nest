@@ -3,7 +3,6 @@ pipeline {
 
     environment {
       registry = "frknbrbr/dockerized-nest"
-      //registryCredential = "dockerhub"
       DOCKERHUB_CREDS = credentials('dockerhub')
     }
 

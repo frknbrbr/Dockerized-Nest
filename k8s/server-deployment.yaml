@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: frknbrbr/dockerized-nest:1cd488bfcdc3201b3c2d7d658cae0620d141801c
+          image: frknbrbr/dockerized-nest:03b05b2249c01275c63c1550fa27243332620ec1
           ports:
             - containerPort: 3000
           env:
