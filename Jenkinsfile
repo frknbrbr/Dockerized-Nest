@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Docker Login') {
             steps {
-              echo 'Login to dockerhub .'
+              echo 'Login to dockerhub ..'
 
               sh "docker login -u=${env.DOCKERHUB_CREDS_USR} -p=${env.DOCKERHUB_CREDS_PSW}"
 
