@@ -5,8 +5,8 @@ const asyncRedis = require("async-redis");
 export class AppService {
   constructor() {
     this.client = asyncRedis.createClient({
-      host: 'redis-server',
-      port: 6379
+      host: process.env.REDIS_HOST || 'redis-server',
+      port: process.env.REDIS_PORT || 6379
     });
     this.client.set("Request count", 0);
   }
