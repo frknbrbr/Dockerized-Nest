@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: frknbrbr/dockerized-nest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 imagePullSecrets: []
 nameOverride: ""
