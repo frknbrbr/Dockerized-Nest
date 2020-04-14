@@ -5,7 +5,7 @@ const asyncRedis = require("async-redis");
 export class AppService {
   constructor() {
     this.client = asyncRedis.createClient({
-      host: process.env.REDIS_HOST || 'docker-helm-redis-master-0' || 'redis-server',
+      host: process.env.REDIS_HOST || 'docker-helm-redis-master-0',
       port: process.env.REDIS_PORT || 6379,
       password: 'osman'
     });
