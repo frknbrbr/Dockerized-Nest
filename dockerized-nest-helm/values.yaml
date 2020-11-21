@@ -69,3 +69,4 @@ affinity: {}
 
 redis: 
   password: 'osman'
+  storageClass: 'generic'
