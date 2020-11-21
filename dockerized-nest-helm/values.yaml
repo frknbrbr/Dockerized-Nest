@@ -71,3 +71,4 @@ redis:
   password: 'osman'
   storageClass: 'generic'
   global.storageClass: 'generic'
+  master.persistence.storageClass: 'generic'
