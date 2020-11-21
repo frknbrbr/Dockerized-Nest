@@ -17,7 +17,7 @@ type: application
 version: 0.1.0
 
 dependencies:
-  - name: bitnami/redis
+  - name: redis
     version: 10.6.5
     repository: https://charts.bitnami.com/bitnami
 
