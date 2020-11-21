@@ -72,3 +72,4 @@ redis:
   storageClass: 'generic'
   global.storageClass: 'generic'
   master.persistence.storageClass: 'generic'
+  master.persistence.enabled: true
